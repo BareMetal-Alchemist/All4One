@@ -8,8 +8,7 @@ def parse_vdf(filepath):
         with open(filepath, encoding='utf-8') as f:
             text = f.read()
 
-        # Grab all paths that look like directories
-        # New Steam format example: "path"  "D:\\SteamLibrary"
+       
         paths = re.findall(r'"path"\s+"(.*?)"', text)
         if not paths:
             # fallback default Steam install location
