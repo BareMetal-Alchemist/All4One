@@ -16,7 +16,7 @@ def parse_vdf(filepath):
             return ['C:\\Program Files (x86)\\Steam']
         return paths
     except Exception as e:
-        print(f"❌ Error parsing libraryfolders.vdf: {e}")
+        print(f"Error parsing libraryfolders.vdf: {e}")
         return ['C:\\Program Files (x86)\\Steam']
 
 def parse_manifest(manifest_path):
@@ -47,7 +47,7 @@ def get_steam_games():
     for lib in libraries:
         steamapps = os.path.join(lib, "steamapps")
         if not os.path.exists(steamapps):
-            print(f"⚠️ Skipping invalid path: {steamapps}")
+            print(f"Skipping invalid path: {steamapps}")
             continue
         for file in os.listdir(steamapps):
             if file.startswith("appmanifest") and file.endswith(".acf"):
